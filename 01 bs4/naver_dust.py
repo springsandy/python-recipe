@@ -5,5 +5,8 @@ import requests
 html = requests.get('https://search.naver.com/search.naver?query=날씨')
 #pprint(html.text)
 
-soup = bs(html.text, 'html.parser')
-pprint(soup)
+SOUP = bs(html.text, 'html.parser')
+#pprint(SOUP)
+
+detal = SOUP.find('div', {'class' : 'detail_box'})
+pprint(detal)
