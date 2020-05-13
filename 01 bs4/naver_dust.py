@@ -9,7 +9,10 @@ SOUP = bs(html.text, 'html.parser')
 #pprint(SOUP)
 
 data1 = SOUP.find('div', {'class' : 'detail_box'})
-pprint(data1)
+# pprint(data1)
 
 data2 = data1.findAll('dd')
-pprint(data2)
+# pprint(data2[0])
+
+find_dust = data2[0].find('span', {'class' : 'num'})
+print(find_dust.text)
